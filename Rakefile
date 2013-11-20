@@ -2,9 +2,16 @@ require "rubygems"
 require 'rake'
 require 'yaml'
 require 'time'
+require 'less'
+
 
 SOURCE = "."
 CONFIG = {
+  'input'  => "style.less",
+  'output' => "style.css",
+  'less'   => File.join( LESS, "less" ),
+  'css'    => File.join( LESS, "css" ),
+
   'version' => "0.3.0",
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
@@ -12,6 +19,25 @@ CONFIG = {
   'post_ext' => "md",
   'theme_package_version' => "0.1.0"
 }
+
+
+ 
+desc "Compile Less"
+task :lessc do
+  less   = CONFIG['less']
+ 
+  input  = File.join( less, CONFIG['input'] )
+  output = File.join( CONFIG['css'], CONFIG['output'] )
+ 
+  source = File.open( input, "r" ).read
+ 
+  parser = Less::Parser.new( :paths => [less] )
+  tree = parser.parse( source )
+ 
+  File.open( output, "w+" ) do |f|
+    f.puts tree.to_css( :compress => true )
+  end
+end # task :lessc
 
 # Path configuration helper
 module JB
