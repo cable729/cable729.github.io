@@ -51,8 +51,12 @@ As I'm sure you remember, `mod` is the modulus function, which gives the remaind
 	    a : (int, positive, invariant(>= b))
 	    b : (int, positive)
 	    )
+	    quotient_floored = a / b
+	    temp_product = quotient_floored * b
+	    residue = a - temp_product
+	    return residue
 
-#fsdfj
+You may have noticed that `mod` only returns integers ranging from `1` to `b - 1`.
 
 -----
 
