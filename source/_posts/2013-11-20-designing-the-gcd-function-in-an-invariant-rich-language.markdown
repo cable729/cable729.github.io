@@ -43,14 +43,16 @@ Finally, a useful result. This is something other programming languages don't ke
 
 Here we see `nonnegative` for the first time. If a number is `positive` it is obviously `nonnegative`, so we are already seeing a sort of inheritence for invariants.
 
-# Mod
+# Modulus
+As I'm sure you remember, `mod` is the modulus function, which gives the remainder when dividing two integers (`5 mod 3 = 2`, `24 mod 6 = 0`).
+
 
 	def mod (
 	    a : (int, positive, invariant(>= b))
 	    b : (int, positive)
 	    )
 
-
+#fsdfj
 
 -----
 
