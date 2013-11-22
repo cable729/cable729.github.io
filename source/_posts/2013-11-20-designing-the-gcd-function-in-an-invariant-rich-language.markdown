@@ -96,7 +96,7 @@ Cool, now our `mod` function returns a `(int, nonnegative)`. Let's build our `gc
 	    divisor = b
 	    while divisor > 0
 	       temp = divisor
-	       divisor = current mod divisor
+	       divisor = mod(current, divisor)
 	       current = temp
 	    return current
 
