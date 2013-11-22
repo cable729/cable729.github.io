@@ -56,13 +56,17 @@ As I'm sure you remember, `mod` is the modulus function, which gives the remaind
 	    residue = a - temp_product
 	    return residue
 
-The `mod` function only returns integers at least `0` and at most `b - 1`. This makes sense intuitively, I.E.: $f(x)$
+The `a mod b` only returns integers at least `0` and at most `b - 1`. This makes sense intuitively, I.E.:
 
 $$
-\begin{align}
-\text{mod}
-\end{align}
+\begin{alignat*}{4}
+\frac{15}{3} &= 5 + \frac{0}{3}, \qquad \frac{16}{3} &= 5 + \frac{1}{3},
+\qquad
+\frac{17}{3} &= 5 + \frac{2}{3}, \qquad \frac{18}{3} &= 5 + \frac{0}{3}.
+\end{alignat*}
 $$
+
+
 
 
 <!-- 
