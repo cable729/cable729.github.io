@@ -44,11 +44,11 @@ Finally, a useful result. This is something other programming languages don't ke
 Here we see `nonnegative` for the first time. If a number is `positive` it is obviously `nonnegative`, so we are already seeing a sort of inheritence for invariants.
 
 # Modulus
-As I'm sure you remember, `mod` is the modulus function, which gives the remainder when dividing two integers (`5 mod 3 = 2`, `24 mod 6 = 0`).
+As I'm sure you remember, `mod` is the modulus function (also known as least residue), which gives the remainder when dividing two integers.
 
 
 	def mod (
-	    a : (int, positive, invariant(>= b))
+	    a : (int, positive, $ >= b) // this means that a >= b
 	    b : (int, positive)
 	    )
 	    quotient_floored = a / b
@@ -56,7 +56,7 @@ As I'm sure you remember, `mod` is the modulus function, which gives the remaind
 	    residue = a - temp_product
 	    return residue
 
-The `a mod b` only returns integers at least `0` and at most `b - 1`. This makes sense intuitively, I.E.:
+Thus `a mod b`, for $a\ge b$, only returns integers at least `0` and at most `b - 1`. This makes sense intuitively, I.E.:
 
 $$
 \begin{alignat*}{4}
@@ -66,8 +66,41 @@ $$
 \end{alignat*}
 $$
 
+So what invariants does `quotient_floored` have? From our equation $a\ge b$, we have $a/b\ge 1$, so it is `positive`. So we have
 
+	quotient_floored = a / b : (int, positive)
 
+Then `temp_product` is the product of `(int, positive) * (int, positive)`. So the product is an `(int, positive)`. But wait, our residue has to return a `(int, nonnegative)`, so `temp_product` must be at most `a`. How do we ensure this?
+
+	quotient_floored = a / b : (int, positive, $ <= quotient(a/b))
+
+Since integer division is actually $\lfloor a/b \rfloor$ (rounding down the quotient), it is at most $a/b$, for positive $a,b$. So
+
+	temp_product : (int, positive, $ <= quotient(a/b)) * (int, positive, $ == b)
+		     : (int, positive, $ <= a)
+
+So our compiler just figured out that $\lfloor a/b \rfloor b \le a$. Now it can say
+
+	residue : (int, positive, $ == a) - (int, positive $ <= a)
+		     : (int, nonnegative)
+
+Cool, now our `mod` function returns a `(int, nonnegative)`. Let's build our `gcd` function now.
+
+# Greatest Common Divisor
+
+	def gcd (
+		a : (int, positive)
+		b : (int, positive, $ <= a)
+		)
+	    current = a
+	    divisor = b
+	    while divisor > 0
+	       temp = divisor
+	       divisor = current mod divisor
+	       current = temp
+	    return current
+
+We know that $1\le\gcd(a,b)\le b$ for all integers $a,b$ with $1\le b\le a$. Thus we'd like the final `a` to be `(int,)
 
 <!-- 
 
