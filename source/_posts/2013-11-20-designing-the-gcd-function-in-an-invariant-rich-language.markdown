@@ -56,9 +56,16 @@ As I'm sure you remember, `mod` is the modulus function, which gives the remaind
 	    residue = a - temp_product
 	    return residue
 
-You may have noticed that `mod` only returns integers ranging from `1` to `b - 1`.
+The `mod` function only returns integers at least `0` and at most `b - 1`. This makes sense intuitively, I.E.: $f(x)$
 
------
+$$
+\begin{align}
+\text{mod}
+\end{align}
+$$
+
+
+<!-- 
 
 # GCD
 
@@ -77,11 +84,6 @@ For all positive integers $a,b$ with $a\ge b$, let $\text{gcd}(a,b)$ be a positi
 
 However, we haven't defined `mod`. Let's do that now. For all $a,b\in\mathbb{N}$, let
 
-$$
-\begin{align}
-\text{mod}
-\end{align}
-$$
 
 	def mod (
 		a : (int, positive)
@@ -115,3 +117,4 @@ Cool, dividing an `int` by an `int` gives an `int`. Every statically-typed langu
 		res = // some low-level implementation
 		return res : (int)
 
+ -->
