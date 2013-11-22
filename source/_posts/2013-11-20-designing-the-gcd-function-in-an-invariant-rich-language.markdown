@@ -89,9 +89,9 @@ Cool, now our `mod` function returns a `(int, nonnegative)`. Let's build our `gc
 # Greatest Common Divisor
 
 	def gcd (
-		a : (int, positive)
-		b : (int, positive, $ <= a)
-		)
+	    a : (int, positive)
+	    b : (int, positive, $ <= a)
+	    )
 	    current = a
 	    divisor = b
 	    while divisor > 0
