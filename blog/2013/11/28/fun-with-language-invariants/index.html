@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Math and Code</title>
+  <title>Fun With Language Invariants - Math and Code</title>
   <meta name="author" content="Caleb Jares">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cable729.github.io">
+  <link rel="canonical" href="http://cable729.github.io/blog/2013/11/28/fun-with-language-invariants">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Math and Code" type="application/atom+xml">
@@ -79,15 +79,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/11/28/fun-with-language-invariants/">Fun With Language Invariants</a></h1>
+      <h1 class="entry-title">Fun With Language Invariants</h1>
     
     
       <p class="meta">
@@ -110,7 +107,7 @@
   </header>
 
 
-  <div class="entry-content"><p>What are invariants and what is an invariant rich language?</p>
+<div class="entry-content"><p>What are invariants and what is an invariant rich language?</p>
 
 <blockquote>
   <p>In computer science, an invariant is a condition that can be relied upon to be true during execution of a program, or during some portion of it. It is a logical assertion that is held to always be true during a certain phase of execution.</p>
@@ -182,18 +179,65 @@ a-b < &qb \le a \\
 
 <p>Hopefully you&rsquo;re getting a sense for the possibilities of a language designed like this. We figured out all of this by hand, but we only used information available from code and the definitions. Therefore it should be possible to design a compiler that can figure all of this out as well. We haven&rsquo;t considered any functions that modify state, so it&rsquo;s still unclear if this kind of design would work in a non-functional language.</p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Caleb Jares</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2013-11-28T09:29:55-07:00" pubdate data-updated="true">Nov 28<span>th</span>, 2013</time>
+      
+
+<span class="categories">
   
-  <div class="pagination">
+    <a class='category' href='/blog/categories/invariants/'>invariants</a>, <a class='category' href='/blog/categories/language-design/'>language-design</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://cable729.github.io/blog/2013/11/28/fun-with-language-invariants/" data-via="cable729" data-counturl="http://cable729.github.io/blog/2013/11/28/fun-with-language-invariants/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -210,7 +254,7 @@ a-b < &qb \le a \\
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/cable729">@cable729</a> on GitHub
@@ -262,6 +306,7 @@ a-b < &qb \le a \\
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -276,7 +321,10 @@ a-b < &qb \le a \\
       var disqus_shortname = 'cable729';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://cable729.github.io/blog/2013/11/28/fun-with-language-invariants/';
+        var disqus_url = 'http://cable729.github.io/blog/2013/11/28/fun-with-language-invariants/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

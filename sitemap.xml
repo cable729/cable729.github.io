@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://cable729.github.io/blog/2013/11/28/fun-with-language-invariants/</loc>
+        <lastmod>2013-11-29T13:38:16-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://cable729.github.io/archives/</loc>
+        <lastmod>2013-11-29T13:38:16-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://cable729.github.io/blog/archives/</loc>
+        <lastmod>2013-11-29T13:38:16-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://cable729.github.io/feed/index.xml</loc>
+        <lastmod>2013-11-29T13:31:46-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://cable729.github.io/</loc>
+        <lastmod>2013-11-29T13:38:16-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://cable729.github.io/robots.txt</loc>
+        <lastmod>2013-11-29T13:31:46-07:00</lastmod>
+    </url>
+</urlset>
